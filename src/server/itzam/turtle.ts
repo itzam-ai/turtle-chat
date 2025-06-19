@@ -20,7 +20,7 @@ export const talkToTurtle = async (message: string, threadId: string) => {
 export const createThread = async (userId: string) => {
   const thread = await itzam.threads.create({
     workflowSlug,
-    lookupKeys: [`${userId}-web-platform`],
+    lookupKeys: [`${userId}`],
   });
 
   return thread;
@@ -28,7 +28,7 @@ export const createThread = async (userId: string) => {
 
 export const getUserThreads = async (userId: string) => {
   const threads = await itzam.threads.list(workflowSlug, {
-    lookupKeys: [`${userId}-web-platform`],
+    lookupKeys: [`${userId}`],
   });
 
   return threads;
